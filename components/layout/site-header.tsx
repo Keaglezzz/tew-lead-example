@@ -31,20 +31,11 @@ export default function SiteHeader() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/courses" className="text-gray-700 hover:text-fuchsia-700 font-medium">
-                Online Courses
-              </Link>
               <Link href="/shop" className="text-gray-700 hover:text-fuchsia-700 font-medium">
                 Shop
               </Link>
               <Link href="/blog" className="text-gray-700 hover:text-fuchsia-700 font-medium">
                 Blog
-              </Link>
-              <Link href="/about" className="text-gray-700 hover:text-fuchsia-700 font-medium">
-                About
-              </Link>
-              <Link href="/contact" className="text-gray-700 hover:text-fuchsia-700 font-medium">
-                Contact
               </Link>
             </nav>
 
@@ -84,13 +75,6 @@ export default function SiteHeader() {
           <div className="md:hidden bg-white border-t border-gray-200 py-4">
             <div className="container mx-auto px-4 space-y-3">
               <Link
-                href="/courses"
-                className="block text-gray-700 hover:text-fuchsia-700 font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Online Courses
-              </Link>
-              <Link
                 href="/shop"
                 className="block text-gray-700 hover:text-fuchsia-700 font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
@@ -103,20 +87,6 @@ export default function SiteHeader() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Blog
-              </Link>
-              <Link
-                href="/about"
-                className="block text-gray-700 hover:text-fuchsia-700 font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="block text-gray-700 hover:text-fuchsia-700 font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
               </Link>
             </div>
           </div>

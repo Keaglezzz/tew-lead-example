@@ -225,7 +225,7 @@ export default function BlogPage() {
               </div>
 
               {/* Featured workshop */}
-              <div className="bg-gradient-to-r from-fuchsia-700 to-purple-700 text-white rounded-lg overflow-hidden shadow-md">
+              <div className="sticky bg-gradient-to-r from-fuchsia-700 to-purple-700 text-white rounded-lg overflow-hidden shadow-md">
                 <div className="relative h-48">
                   <Image
                     src="/placeholder.svg?height=400&width=600"

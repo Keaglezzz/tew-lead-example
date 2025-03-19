@@ -113,10 +113,11 @@ export function FirstTimeVisitorDiscount() {
 // Product recommendation banner
 export function ProductRecommendationBanner() {
   return (
-    <div className="w-full bg-gradient-to-r from-fuchsia-50 to-purple-50 border border-fuchsia-100 rounded-lg overflow-hidden shadow-sm">
-      <div className="px-6 py-8 sm:px-8 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div className="w-full bg-gradient-to-r from-fuchsia-100 via-pink-50 to-purple-100 border border-fuchsia-200 rounded-lg overflow-hidden shadow-md relative">
+      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-30 mix-blend-soft-light"></div>
+      <div className="px-6 py-8 sm:px-8 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10">
         <div className="space-y-2 text-center sm:text-left">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-fuchsia-100 text-fuchsia-800 text-sm font-medium">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-fuchsia-100 text-fuchsia-800 text-sm font-medium border border-fuchsia-200">
             <Sparkles className="h-4 w-4 mr-2" />
             Find Your Perfect Match
           </div>
@@ -125,8 +126,10 @@ export function ProductRecommendationBanner() {
             Take our quick quiz to discover which crystal will best enhance your sexual energy.
           </p>
         </div>
-
-        <Button className="bg-fuchsia-700 hover:bg-fuchsia-800 text-white px-6 py-6">Take the Quiz</Button>
+        
+        <Button className="bg-fuchsia-700 hover:bg-fuchsia-800 text-white px-6 py-6 shadow-lg">
+          Take the Quiz
+        </Button>
       </div>
     </div>
   )
@@ -164,7 +167,7 @@ export function AbandonedCartRecovery() {
   if (!isVisible) return null
 
   return (
-    <div className="fixed bottom-0 right-0 m-6 z-40 max-w-sm w-full bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
+    <div className="fixed bottom-0 right-0 m-6 z-40 max-w-sm w-full bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-100">
       <div className="bg-fuchsia-700 p-3 text-white flex justify-between items-center">
         <h4 className="font-medium flex items-center">
           <ShoppingBag className="h-4 w-4 mr-2" />

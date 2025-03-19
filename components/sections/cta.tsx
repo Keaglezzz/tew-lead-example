@@ -10,12 +10,12 @@ export default function CTA() {
           power.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="bg-white text-fuchsia-900 hover:bg-white/90 rounded-full px-8 py-6 text-lg">
+          <Button className="bg-white text-fuchsia-900 hover:bg-white/90 rounded-full px-8 py-6 text-lg font-semibold shadow-lg">
             Join the Membership
           </Button>
           <Button
-            variant="outline"
-            className="border-white text-white hover:bg-white/10 rounded-full px-8 py-6 text-lg"
+            variant="default"
+            className="bg-fuchsia-500 text-white hover:bg-fuchsia-400 rounded-full px-8 py-6 text-lg font-semibold shadow-lg border-2 border-fuchsia-400"
           >
             Explore Courses
           </Button>

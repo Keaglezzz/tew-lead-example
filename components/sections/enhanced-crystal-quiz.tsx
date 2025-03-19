@@ -18,18 +18,6 @@ export default function EnhancedCrystalQuiz() {
   const [name, setName] = useState("")
   const [submitted, setSubmitted] = useState(false)
   const [showResults, setShowResults] = useState(false)
-  const [buttonVisible, setButtonVisible] = useState(false)
-
-  useEffect(() => {
-    // Show the button after 10 seconds if quiz not completed
-    if (!localStorage.getItem("quizCompleted")) {
-      const timer = setTimeout(() => {
-        setButtonVisible(true)
-      }, 10000)
-
-      return () => clearTimeout(timer)
-    }
-  }, [])
 
   const questions = [
     {
@@ -77,7 +65,7 @@ export default function EnhancedCrystalQuiz() {
   ]
 
   // Determine which crystal to recommend based on answers
-  const getCrystalRecommendation = () => {
+  const getCrystalRecommendation = (): typeof crystalRecommendations[number] => {
     // This is a simplified algorithm - in reality, you'd have more complex logic
     if (answers[0] === "Sexual confidence" || answers[2] === "Passion") {
       return crystalRecommendations[1] // Carnelian
@@ -125,10 +113,10 @@ export default function EnhancedCrystalQuiz() {
   if (!isOpen && localStorage.getItem("quizCompleted")) return null
 
   const recommendedCrystal = getCrystalRecommendation()
-
+  
   return (
     <div className="fixed bottom-8 right-8 z-40">
-      {!isOpen && buttonVisible ? (
+      {!isOpen ? (
         <Button
           onClick={() => setIsOpen(true)}
           className="bg-fuchsia-700 hover:bg-fuchsia-800 text-white rounded-full px-6 py-6 shadow-lg flex items-center group"

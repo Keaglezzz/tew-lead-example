@@ -132,7 +132,7 @@ export function BlogSidebarOptIn() {
   }
 
   return (
-    <div className="sticky top-24 bg-white border border-gray-200 rounded-lg shadow-md p-5 max-w-xs z-10">
+    <div className="top-24 bg-white rounded-lg shadow-md p-5 w-full z-10 border border-fuschia-400">
       <div className="text-center mb-4">
         <div className="w-16 h-16 bg-fuchsia-100 rounded-full flex items-center justify-center mx-auto mb-3">
           <BookOpen className="h-8 w-8 text-fuchsia-700" />
