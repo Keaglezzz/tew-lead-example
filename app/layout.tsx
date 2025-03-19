@@ -9,7 +9,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "The Empowered Woman",
   description: "Canada's leading sexual empowerment platform for women",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({

@@ -13,10 +13,14 @@ export function FirstTimeVisitorDiscount() {
   const [isOpen, setIsOpen] = useState(false)
   const [email, setEmail] = useState("")
   const [submitted, setSubmitted] = useState(false)
+  const [hasSeenPopup, setHasSeenPopup] = useState(false)
 
   useEffect(() => {
-    // Show popup after 3 seconds if it hasn't been shown before
-    if (!localStorage.getItem("discountPopupShown")) {
+    // Check localStorage only on client side
+    const popupShown = localStorage.getItem("discountPopupShown") === "true"
+    setHasSeenPopup(popupShown)
+
+    if (!popupShown) {
       const timer = setTimeout(() => {
         setIsOpen(true)
       }, 3000)
@@ -29,17 +33,15 @@ export function FirstTimeVisitorDiscount() {
     e.preventDefault()
     console.log("First-time visitor discount submitted:", email)
     setSubmitted(true)
-
-    // Store in localStorage to prevent showing again
+    setHasSeenPopup(true)
     localStorage.setItem("discountPopupShown", "true")
 
-    // Close popup after 3 seconds
     setTimeout(() => {
       setIsOpen(false)
     }, 3000)
   }
 
-  if (!isOpen) return null
+  if (!isOpen || hasSeenPopup) return null
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
@@ -163,7 +165,7 @@ export function AbandonedCartRecovery() {
     window.addEventListener("cartIconClicked", handleCartClick)
     return () => window.removeEventListener("cartIconClicked", handleCartClick)
   }, [])
-
+  
   if (!isVisible) return null
 
   return (

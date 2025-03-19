@@ -18,6 +18,13 @@ export default function EnhancedCrystalQuiz() {
   const [name, setName] = useState("")
   const [submitted, setSubmitted] = useState(false)
   const [showResults, setShowResults] = useState(false)
+  const [quizCompleted, setQuizCompleted] = useState(false)
+
+  // Move localStorage check to useEffect
+  useEffect(() => {
+    const completed = localStorage.getItem("quizCompleted") === "true"
+    setQuizCompleted(completed)
+  }, [])
 
   const questions = [
     {
@@ -103,14 +110,15 @@ export default function EnhancedCrystalQuiz() {
       setName("")
       setSubmitted(false)
       setShowResults(false)
+      setQuizCompleted(true)
 
       // Store in localStorage to prevent showing again in this session
       localStorage.setItem("quizCompleted", "true")
     }, 5000)
   }
 
-  // Show button only if quiz not completed
-  if (!isOpen && localStorage.getItem("quizCompleted")) return null
+  // Modify the condition to use state instead of direct localStorage access
+  if (!isOpen && quizCompleted) return null
 
   const recommendedCrystal = getCrystalRecommendation()
   
